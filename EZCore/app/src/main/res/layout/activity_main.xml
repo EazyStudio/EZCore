@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vn.eazy.studio.core.state_view.MultiStateView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/lyMultiState"
+    app:msv_emptyView="@layout/ez_empty_view"
+    app:msv_loadingView="@layout/ez_loading_view"
+    app:msv_errorView="@layout/ez_error_view"
+    app:msv_viewState="content"
+    tools:context="vn.eazy.studio.core.example.MainActivity">
+
+    <vn.eazy.studio.core.example.widgets.BookerlyButton
+        android:id="@+id/btStateView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="State View"
+        android:layout_gravity="center"
+       />
+</vn.eazy.studio.core.state_view.MultiStateView>
