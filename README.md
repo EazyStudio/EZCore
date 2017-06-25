@@ -1,0 +1,2 @@
+# EZCore
+Core for Android
