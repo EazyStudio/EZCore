@@ -204,41 +204,15 @@ repositories {
 
 ```gradle
 dependencies {
-	implementation 'com.github.harrylefit:EZCore:v1.0'
-        
-    //network
-    implementation(rootProject.ext.dependencies["retrofit"]) {
+    implementation 'com.github.harrylefit:EZCore:v1.0'
+       
+    implementation ("com.squareup.retrofit2:retrofit:2.3.0") {
         exclude module: "okhttp"
     }
-    implementation rootProject.ext.dependencies["retrofit-converter-gson"]
-    implementation(rootProject.ext.dependencies["retrofit-adapter-rxjava2"]) {
-        exclude module: "rxjava"
-    }
-    implementation rootProject.ext.dependencies["okhttp3"]
-    implementation rootProject.ext.dependencies["okhttp-urlconnection"]
-    implementation(rootProject.ext.dependencies["logging-interceptor"]) {
-        exclude group: 'org.json', module: 'json'
-    }
-    implementation rootProject.ext.dependencies["glide"]
 
-    //Reactive
-    implementation rootProject.ext.dependencies["rxandroid2"]
-    implementation rootProject.ext.dependencies["rxjava2"]
+    implementation "com.squareup.okhttp3:okhttp:3.8.0"
 
-    //Eventbus
-    implementation rootProject.ext.dependencies["event-bus"]
-
-    //View
-    implementation rootProject.ext.dependencies["butter-knife"]
-    provided "javax.annotation:jsr250-api:1.0"
-    annotationProcessor rootProject.ext.dependencies["butter-knife-compiler"]
-
-    //Permissions
-    implementation rootProject.ext.dependencies["rx-permissions"]
-
-    //Dagger
-    implementation rootProject.ext.dependencies["dagger"]
-    annotationProcessor rootProject.ext.dependencies["dagger-compiler"]
+    implementation "com.squareup.retrofit2:converter-gson:2.3.0"
 }
 ```
 
