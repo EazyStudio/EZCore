@@ -202,6 +202,20 @@ repositories {
 }
 ```
 
+```gradle
+dependencies {
+    implementation 'com.github.harrylefit:EZCore:v1.0'
+       
+    implementation ("com.squareup.retrofit2:retrofit:2.3.0") {
+        exclude module: "okhttp"
+    }
+
+    implementation "com.squareup.okhttp3:okhttp:3.8.0"
+
+    implementation "com.squareup.retrofit2:converter-gson:2.3.0"
+}
+```
+
 
 #Licence
 
