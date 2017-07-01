@@ -10,13 +10,13 @@ import com.google.gson.GsonBuilder;
 import java.util.List;
 
 import okhttp3.OkHttpClient;
-import retrofit2.Retrofit;
 import vn.eazy.studio.core.delegate.AppDelegate;
 import vn.eazy.studio.core.di.module.AppModule;
 import vn.eazy.studio.core.di.module.ClientModule;
 import vn.eazy.studio.core.di.module.GlobalModule;
 import vn.eazy.studio.core.intergration.ConfigModule;
 import vn.eazy.studio.core.intergration.IRepositoryManager;
+import vn.eazy.studio.core.intergration.handler.error.listener.ResponseErrorListener;
 
 /**
  * Created by harryle on 6/25/17.
@@ -25,23 +25,23 @@ import vn.eazy.studio.core.intergration.IRepositoryManager;
 public class GlobalConfiguration implements ConfigModule {
     private final String TAG = this.getClass().getSimpleName();
     @Override
-    public void applyOptions(Context context, GlobalModule.Builder builder) {
+    public void applyOptions(Context context, final GlobalModule.Builder builder) {
         builder.baseUrl("http://github.com");
-        builder.retrofitConfiguration(new ClientModule.RetrofitConfiguration() {
+        builder.gsonConfiguration(new AppModule.GsonConfiguration() {
             @Override
-            public void configRetrofit(Context context, Retrofit.Builder builder) {
+            public void configGson(Context context, GsonBuilder builder) {
+
+            }
+        });
+        builder.responseErrorListener(new ResponseErrorListener() {
+            @Override
+            public void handleResponseError(Context context, Throwable t) {
 
             }
         });
         builder.okHttpConfiguration(new ClientModule.OkHttpConfiguration() {
             @Override
             public void configOkHttp(Context context, OkHttpClient.Builder builder) {
-
-            }
-        });
-        builder.gsonConfiguration(new AppModule.GsonConfiguration() {
-            @Override
-            public void configGson(Context context, GsonBuilder builder) {
 
             }
         });
